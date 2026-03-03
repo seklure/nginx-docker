@@ -347,10 +347,10 @@ RUN set -eux && \
     cd ${DOWNLOAD_SRC}/nginx-${NGINX_VERSION} && \
     # sed -i '1,/nginx_version/{s/.*nginx_version.*/#define nginx_version      1010/}' src/core/nginx.h && \
     # sed -i '1,/NGINX_VERSION/{s/.*NGINX_VERSION.*/#define NGINX_VERSION      "1.1"/}' src/core/nginx.h && \
-    sed -i '14s#nginx#Alexr00t_waf#' src/core/nginx.h && \
-    sed -i '1,/NGINX_VAR/{s/.*NGINX_VAR.*/#define NGINX_VAR          "Alexr00t_WAF"/}' src/core/nginx.h && \
-    sed -i 's#Server: nginx#Server: Alexr00t#g' src/http/ngx_http_header_filter_module.c && \
-    sed -i 's#<hr><center>nginx</center>#<hr><center>Alexr00t</center>#g' src/http/ngx_http_special_response.c && \
+    sed -i '14s#nginx#seklure_waf#' src/core/nginx.h && \
+    sed -i '1,/NGINX_VAR/{s/.*NGINX_VAR.*/#define NGINX_VAR          "seklure_WAF"/}' src/core/nginx.h && \
+    sed -i 's#Server: nginx#Server: seklure#g' src/http/ngx_http_header_filter_module.c && \
+    sed -i 's#<hr><center>nginx</center>#<hr><center>seklure</center>#g' src/http/ngx_http_special_response.c && \
     ./configure ${NGINX_BUILD_CONFIG} \
     --add-module=${DOWNLOAD_SRC}/headers-more-nginx-module-${OPENRESTY_HEADERS_VERSION} \
     --add-module=${DOWNLOAD_SRC}/stream-lua-nginx-module-${OPENRESTY_STREAMLUA_VERSION} \
